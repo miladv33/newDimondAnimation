@@ -11,12 +11,23 @@
         android:id="@+id/line_purple_background"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="visible"
         app:layout_constraintDimensionRatio="1.8:1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_badges_diamond_all_bk_purple_1" />
-
+    <ImageView
+        android:id="@+id/purple_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="5:4"
+        app:layout_constraintEnd_toEndOf="@+id/line_purple_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_badges_diamond_bk_purple"
+        />
     <ImageView
         android:id="@+id/white_background"
         android:layout_width="0dp"
@@ -28,6 +39,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_badges_diamond_bk_purple"
         app:tint="@color/mainBackground" />
+
 
     <ImageView
         android:id="@+id/purple_diamond"

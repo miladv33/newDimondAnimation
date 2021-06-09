@@ -58,7 +58,7 @@ fun changeSizeAnimation(
     anim.start()
 }
 
-fun View.fadOut(duration: Long = 700) {
+fun View.fadOut(duration: Long = 700 , startOffset: Long = 0,) {
     val fadeOut = AlphaAnimation(1f, 0f)
     fadeOut.interpolator = AccelerateInterpolator() //and this
     fadeOut.duration = duration
@@ -77,6 +77,7 @@ fun View.fadOut(duration: Long = 700) {
         }
 
     })
+    fadeOut.startOffset = startOffset
     this.startAnimation(fadeOut)
 }
 

@@ -79,7 +79,6 @@
         android:id="@+id/halfBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@android:color/black"
         app:layout_constraintBottom_toBottomOf="@+id/mainImageView"
         app:layout_constraintEnd_toEndOf="@+id/empty_view"
         app:layout_constraintHorizontal_bias="0.65"

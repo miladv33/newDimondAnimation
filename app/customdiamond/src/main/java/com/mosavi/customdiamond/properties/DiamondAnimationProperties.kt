@@ -8,7 +8,7 @@ import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 enum class DiamondAnimationProperties(
     var lineDelay: Int,
     var visibleWhiteDiamondDelay: Int,
-    var duration: Int,
+    var duration: Long,
     var diamondInterpolator: Interpolator,
     var textInterpolator: Interpolator,
     var startX: Int,
