@@ -1,0 +1,3 @@
+include ':app:customdiamond'
+include ':app'
+rootProject.name = "TestCustomDiamond"

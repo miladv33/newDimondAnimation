@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/backgroundView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_all_corners_toolbar_no_stroke"
+        app:layout_constraintBottom_toBottomOf="@+id/startTextView"
+        app:layout_constraintEnd_toEndOf="@+id/endTextView"
+        app:layout_constraintStart_toStartOf="@+id/empty_view"
+        app:layout_constraintTop_toTopOf="@+id/startTextView" />
+
+
+    <View
+        android:id="@+id/empty_view"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mainImageView"
+        app:layout_constraintEnd_toEndOf="@+id/mainImageView"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="@+id/mainImageView"
+        app:layout_constraintTop_toTopOf="@+id/mainImageView" />
+
+    <TextView
+        android:id="@+id/startTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end|center"
+        android:maxLines="1"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="TextView1"
+        android:textColor="@color/palletMajorelleBlue"
+        android:textSize="30px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/diamondImageView"
+        app:layout_constraintStart_toEndOf="@+id/mainImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="TextView1" />
+
+    <ImageView
+        android:id="@+id/diamondImageView"
+        android:layout_width="20dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/startTextView"
+        app:layout_constraintEnd_toStartOf="@id/endTextView"
+        app:layout_constraintStart_toEndOf="@+id/startTextView"
+        app:layout_constraintTop_toTopOf="@+id/startTextView"
+        app:srcCompat="@drawable/ic_business_diamond"
+        app:tint="@color/palletMajorelleBlue" />
+
+    <TextView
+        android:id="@+id/endTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="end|center"
+        android:maxLines="1"
+        android:paddingEnd="2dp"
+        app:layout_constraintWidth_default="wrap"
+        android:text="TextView 2"
+        android:textColor="@color/palletMajorelleBlue"
+        android:textSize="30px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/startTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/diamondImageView"
+        app:layout_constraintTop_toTopOf="@+id/diamondImageView" />
+
+    <com.mosavi.customdiamond.DiamondCustomView
+        android:id="@+id/mainImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintWidth_min="wrap"
+        app:layout_constraintBottom_toBottomOf="@+id/startTextView"
+        app:layout_constraintDimensionRatio="1.8:1"
+        app:layout_constraintEnd_toStartOf="@id/startTextView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/startTextView" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/text_group"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:constraint_referenced_ids="endTextView,diamondImageView,startTextView,backgroundView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/backgroundView"
+        app:layout_constraintStart_toStartOf="@+id/backgroundView"
+        app:layout_constraintTop_toTopOf="@+id/backgroundView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

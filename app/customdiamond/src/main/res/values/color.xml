@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="palletMajorelleBlue">#0dCCCC</color>
+    <attr name="colorVioletPlayPodText" format="color" />
+    <color name="mainBackground">#F1F1F8</color>
+    <color name="colorVioletPlayPodText">#FF9400D3</color>
+
+</resources>
