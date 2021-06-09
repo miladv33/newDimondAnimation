@@ -27,6 +27,8 @@
         app:layout_constraintStart_toStartOf="@+id/mainImageView"
         app:layout_constraintTop_toTopOf="@+id/mainImageView" />
 
+
+
     <TextView
         android:id="@+id/startTextView"
         android:layout_width="wrap_content"
@@ -73,6 +75,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/diamondImageView"
         app:layout_constraintTop_toTopOf="@+id/diamondImageView" />
+    <View
+        android:id="@+id/halfBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/mainImageView"
+        app:layout_constraintEnd_toEndOf="@+id/empty_view"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mainImageView" />
 
     <com.mosavi.customdiamond.DiamondCustomView
         android:id="@+id/mainImageView"

@@ -5,7 +5,6 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
 import androidx.constraintlayout.widget.Group
-import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.mosavi.customdiamond.*
 import com.mosavi.customdiamond.listeners.IAnimationDone
 import com.mosavi.customdiamond.properties.DiamondAnimationProperties
@@ -24,15 +23,15 @@ class DiamondAnimation(var diamondAnimationProperties: DiamondAnimationPropertie
                 view.findViewById<Group>(R.id.text_group).show()
                 val ids = view.findViewById<Group>(R.id.text_group).getReferencedViews()
                 ids.forEach {
-                    changeSizeAnimation(it,FastOutSlowInInterpolator(),0)
+                    moveDiamond(it,startFrom = -1000F,startOffset = 0)
                 }
             }
-
         })
+
 //        animateLines(view)
     }
 
-    private fun moveDiamond(view: View, iAnimationDone: IAnimationDone? = null, startFrom: Float = diamondAnimationProperties.startX.toFloat()) {
+    private fun moveDiamond(view: View, iAnimationDone: IAnimationDone? = null, startFrom: Float = diamondAnimationProperties.startX.toFloat(),startOffset:Long = 0) {
         view.show()
         val anim = TranslateAnimation(startFrom, 0f, 0F, 0f)
         anim.setAnimationListener(object : Animation.AnimationListener {
@@ -45,6 +44,7 @@ class DiamondAnimation(var diamondAnimationProperties: DiamondAnimationPropertie
                 iAnimationDone?.done()
             }
         })
+        anim.startOffset = startOffset
         anim.duration = 1000
         anim.interpolator = diamondAnimationProperties.diamondInterpolator
         view.startAnimation(anim)
