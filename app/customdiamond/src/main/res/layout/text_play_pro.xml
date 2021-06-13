@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-   >
+    android:id="@+id/root_text"
+    >
     <View
         android:id="@+id/backgroundView"
         android:layout_width="0dp"
@@ -23,7 +23,7 @@
         android:paddingStart="30dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:text="111111111111111111111111"
+        android:text=""
         android:textColor="@color/palletMajorelleBlue"
         android:textSize="30px"
         android:textStyle="bold"
@@ -37,6 +37,8 @@
         android:id="@+id/diamondImageView"
         android:layout_width="20dp"
         android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
         app:layout_constraintBottom_toBottomOf="@id/startTextView"
         app:layout_constraintEnd_toStartOf="@id/endTextView"
         app:layout_constraintStart_toEndOf="@+id/startTextView"
@@ -53,7 +55,7 @@
         android:maxLines="1"
         android:paddingEnd="2dp"
         app:layout_constraintWidth_default="wrap"
-        android:text="222222222222222222222222222222222222222222222222 2"
+        android:text=""
         android:textColor="@color/palletMajorelleBlue"
         android:textSize="30px"
         android:textStyle="bold"

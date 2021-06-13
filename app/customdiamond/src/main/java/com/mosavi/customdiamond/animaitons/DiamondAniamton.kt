@@ -27,6 +27,6 @@ class DiamondAniamton(var diamondAnimationProperties: DiamondAnimationProperties
         view.findViewById<ImageView>(R.id.white_purple_diamond).fadOut(startOffset = 1000)
     }
     private fun changeWidthAndFadeShadows(view:View){
-        view.findViewById<ImageView>(R.id.line_purple_background).fadOut(startOffset = 200,duration = 600)
+        view.findViewById<ImageView>(R.id.line_purple_background).fadOut(startOffset = 300,duration = 800)
     }
 }

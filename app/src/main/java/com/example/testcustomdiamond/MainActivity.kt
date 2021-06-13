@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val playProDiamond = findViewById<PlayProCustomView>(R.id.playProDiamond)
-        playProDiamond.setup(DiamondAnimationProperties.Fast)
+        playProDiamond.setup(DiamondAnimationProperties.Fast,constraintLayout = findViewById(R.id.root_layout))
     }
 }

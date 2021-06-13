@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.mosavi.customdiamond.animaitons.DiamondAniamton
 import com.mosavi.customdiamond.listeners.IAnimationDone
 import com.mosavi.customdiamond.properties.DiamondAnimationProperties
@@ -23,5 +24,7 @@ class DiamondCustomView(context: Context,attributeSet: AttributeSet?):FrameLayou
     fun performAnimation(iAnimationDone: IAnimationDone? = null) {
         diamondAniamton?.startAnimation(view, iAnimationDone)
     }
+
+
 
 }
