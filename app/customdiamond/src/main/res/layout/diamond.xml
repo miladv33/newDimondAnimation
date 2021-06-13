@@ -3,87 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    >
 
     <View
-        android:id="@+id/backgroundView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/shape_all_corners_toolbar_no_stroke"
-        app:layout_constraintBottom_toBottomOf="@+id/startTextView"
-        app:layout_constraintEnd_toEndOf="@+id/endTextView"
-        app:layout_constraintStart_toStartOf="@+id/empty_view"
-        app:layout_constraintTop_toTopOf="@+id/startTextView" />
-
-
-
-    <View
-        android:id="@+id/empty_view"
+        android:id="@+id/halfView"
         android:layout_width="1dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/mainImageView"
         app:layout_constraintEnd_toEndOf="@+id/mainImageView"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="@+id/mainImageView"
         app:layout_constraintTop_toTopOf="@+id/mainImageView" />
 
-
-
-    <TextView
-        android:id="@+id/startTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="end|center"
-        android:maxLines="1"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:text="TextView1"
-        android:textColor="@color/palletMajorelleBlue"
-        android:textSize="30px"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/diamondImageView"
-        app:layout_constraintStart_toEndOf="@+id/mainImageView"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="TextView1" />
-
-    <ImageView
-        android:id="@+id/diamondImageView"
-        android:layout_width="20dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/startTextView"
-        app:layout_constraintEnd_toStartOf="@id/endTextView"
-        app:layout_constraintStart_toEndOf="@+id/startTextView"
-        app:layout_constraintTop_toTopOf="@+id/startTextView"
-        app:srcCompat="@drawable/ic_business_diamond"
-        app:tint="@color/palletMajorelleBlue" />
-
-    <TextView
-        android:id="@+id/endTextView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:gravity="end|center"
-        android:maxLines="1"
-        android:paddingEnd="2dp"
         app:layout_constraintWidth_default="wrap"
-        android:text="TextView 2"
-        android:textColor="@color/palletMajorelleBlue"
-        android:textSize="30px"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/startTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/diamondImageView"
-        app:layout_constraintTop_toTopOf="@+id/diamondImageView" />
-    <View
-        android:id="@+id/halfBackground"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mainImageView"
-        app:layout_constraintEnd_toEndOf="@+id/empty_view"
-        app:layout_constraintHorizontal_bias="0.65"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mainImageView" />
+        app:layout_constraintStart_toEndOf="@id/halfView"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.mosavi.customdiamond.TextCustomView
+            android:id="@+id/customStartTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <com.mosavi.customdiamond.DiamondCustomView
         android:id="@+id/mainImageView"
@@ -91,23 +46,10 @@
         android:layout_height="0dp"
         android:visibility="visible"
         app:layout_constraintWidth_min="wrap"
-        app:layout_constraintBottom_toBottomOf="@+id/startTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintText"
         app:layout_constraintDimensionRatio="1.8:1"
-        app:layout_constraintEnd_toStartOf="@id/startTextView"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/startTextView" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/text_group"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="invisible"
-        app:constraint_referenced_ids="endTextView,diamondImageView,startTextView,backgroundView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/backgroundView"
-        app:layout_constraintStart_toStartOf="@+id/backgroundView"
-        app:layout_constraintTop_toTopOf="@+id/backgroundView" />
+        app:layout_constraintTop_toTopOf="@+id/constraintText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

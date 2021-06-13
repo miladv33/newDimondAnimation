@@ -4,5 +4,6 @@
     <attr name="startText" format="string"/>
     <attr name="endText" format="string"/>
     <attr name="sizeOfText" format="dimension"/>
+    <attr name="textColor" format="color" />
 </declare-styleable>
 </resources>

@@ -4,7 +4,10 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
 import androidx.constraintlayout.widget.Group
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.mosavi.customdiamond.R
+import com.mosavi.customdiamond.TextCustomView
+import com.mosavi.customdiamond.changeSizeAnimation
 import com.mosavi.customdiamond.listeners.IAnimationDone
 import com.mosavi.customdiamond.properties.DiamondAnimationProperties
 import com.mosavi.customdiamond.show
@@ -17,6 +20,7 @@ class PlayProAnimation(var diamondAnimationProperties: DiamondAnimationPropertie
             override fun done() {
                 iAnimationDone.done()
                 moveTextView(view)
+//                changeSizeAnimation(view.findViewById<TextCustomView>(R.id.customStartTextView),FastOutSlowInInterpolator(),0)
             }
         })
     }
@@ -41,8 +45,7 @@ class PlayProAnimation(var diamondAnimationProperties: DiamondAnimationPropertie
     }
 
     fun moveTextView(view: View, iAnimationDone: IAnimationDone? = null, startFrom: Float = diamondAnimationProperties.startX.toFloat(), startOffset: Long = 0) {
-        view.findViewById<Group>(R.id.text_group).show()
-        val ids = view.findViewById<Group>(R.id.text_group).getReferencedViews()
+
 
         val anim = TranslateAnimation(startFrom, 0f, 0F, 0f)
         anim.setAnimationListener(object : Animation.AnimationListener {
@@ -58,8 +61,8 @@ class PlayProAnimation(var diamondAnimationProperties: DiamondAnimationPropertie
         anim.startOffset = startOffset
         anim.duration = diamondAnimationProperties.duration
         anim.interpolator = diamondAnimationProperties.diamondInterpolator
-        ids.forEach {
-            moveDiamond(it, startFrom = (-(view.width)).toFloat(), startOffset = 0)
+        with(view.findViewById<TextCustomView>(R.id.customStartTextView)) {
+            moveDiamond(this, startFrom = (-(view.width)).toFloat(), startOffset = 0)
         }
     }
 
